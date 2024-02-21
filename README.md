@@ -13,6 +13,8 @@
 - Carteles de Avisos.
 - Manejo de DOM.
 - HTML, CSS, Javascript, LWC.
+- Clases Apex.
+- SOQL.
 ___
 
 

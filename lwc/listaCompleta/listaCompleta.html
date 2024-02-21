@@ -1,0 +1,31 @@
+<!-- sldsValidatorIgnore -->
+<!-- sldsValidatorIgnore -->
+<!--Genera los cuadros de las Tareas-->
+<template>
+    <lightning-card title={tituloPagina} icon-name="standard:task">
+        <template lwc:if={listaTarea}>
+        <div class="slds-var-m-around_medium">
+                <lightning-layout
+                    class="slds-var-m-vertical_x-small custom-box"
+                    vertical-align="stretch"
+                    multiple-rows="true">
+                    <template for:each={listaTarea} for:item="todo">
+                        <lightning-layout-item key={todo.Id} size="11" padding="around-small" >
+                            Tarea: {todo.NombreTarea__c}<br/>
+                            Fecha: {todo.FechaTarea__c}
+                        </lightning-layout-item>
+                    <lightning-layout-item key={todo.Id} size="1" padding="around-small">
+                        <template lwc:if={verBoton}>
+                            <lightning-button-icon
+                                icon-name="standard:task2"
+                                onclick={handleClick}
+                                data-recordid={todo.Id}>
+                            </lightning-button-icon>
+                        </template>
+                    </lightning-layout-item>
+                </template>
+                </lightning-layout>
+        </div>
+    </template>
+    </lightning-card>
+</template>

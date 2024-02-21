@@ -1,0 +1,15 @@
+<!--Componente Padre -->
+<template>
+    <lightning-layout multiple-rows>
+        <lightning-layout-item size="12" padding="around-small">
+            <c-lista-Tarea onrefresca={refresca}></c-lista-Tarea>    
+        </lightning-layout-item>
+        <lightning-layout-item size="6" padding="around-small">  
+            <c-lista-completa lwc:ref="pendienteTarea" estado="Pendiente" onrefresca={refresca}></c-lista-completa>
+        </lightning-layout-item>
+        <lightning-layout-item size="6" padding="around-small">
+            <c-lista-completa lwc:ref="completaTarea" estado="Completa" onrefresca={refresca}></c-lista-completa>
+        </lightning-layout-item>
+    </lightning-layout>
+    
+</template>

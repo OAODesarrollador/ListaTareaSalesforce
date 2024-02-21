@@ -1,0 +1,47 @@
+<!-- sldsValidatorIgnore -->
+<!-- sldsValidatorIgnore -->
+
+<!-- Crea la Tarjeta para la creación de la tarea-->
+<template>
+    <lightning-card>
+        <h3 slot="title">
+            <lightning-icon icon-name="standard:disclosure_and_compliance" size="x-large"></lightning-icon>
+            Organizador de Tareas
+        </h3>
+        <div class="slds-m-top_medium slds-m-bottom_x-large">
+            <h2 class="slds-text-heading_medium slds-m-bottom_medium">
+                   Tareas a realizar
+            </h2>
+            <div class="slds-p-around_medium lgc-bg">
+                <lightning-input 
+                    type="text" 
+                    name="tarea" 
+                    label="Descripción de la Tarea"  
+                    value={tarea} 
+                    required
+                    onchange={handleOnChange} >
+                </lightning-input>
+                <template lwc:if={showFecha}>
+                    <lightning-input 
+                        type="date" 
+                        name="fecha" 
+                        label="Fecha de la tarea" 
+                        value={fecha} 
+                        required
+                        onchange={handleOnChange}>
+                    </lightning-input>
+                </template>
+                <br/>
+                <template lwc:if={showBoton}>
+                    <lightning-button 
+                        variant="brand" 
+                        label="Guardar Tarea"
+                        title="Guardar" 
+                        onclick={handleClick} 
+                        class="slds-m-left_x-small">
+                    </lightning-button>
+                </template>
+            </div>
+        </div>
+    </lightning-card>
+</template>
